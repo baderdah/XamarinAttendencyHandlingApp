@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Abscence.SearchPage">
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <Image x:Name="backImage" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All" Aspect="Fill"/>
+            <ActivityIndicator Color="Blue" IsRunning="{Binding Source={x:Reference backImage}, Path=IsLoading}" AbsoluteLayout.LayoutBounds="0.5, 0.5, 100, 100" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+            <StackLayout Padding="10, 20" Spacing="30" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All">
+                <SearchBar x:Name="searchBar" HorizontalOptions="CenterAndExpand" Placeholder="Type a name" TextChanged="searchBar_TextChanged"/>
+                <Label Text="Results:" FontSize="Title" HorizontalOptions="Center" TextColor="white" Padding="0, 20"/>
+                <ListView x:Name="listView" ItemSelected="student_ItemSelected">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal" VerticalOptions="Center"> 
+                                    <Label Text="{Binding LastName}" FontSize="Large" TextColor="Black"/>
+                                    <Label Text="{Binding FirstName}" HorizontalOptions="FillAndExpand" TextColor="Black" FontSize="Large"/>
+                                    <Label Text="{Binding Filiere}" TextColor="Blue" FontSize="Large"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

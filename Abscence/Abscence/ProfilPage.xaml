@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Abscence.ProfilPage"
+             NavigationPage.HasNavigationBar="false">
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <Image x:Name="backImage" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All" Aspect="Fill"/>
+            <ActivityIndicator Color="Blue" IsRunning="{Binding Source={x:Reference backImage}, Path=IsLoading}" AbsoluteLayout.LayoutBounds="0.5, 0.5, 100, 100" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+            <StackLayout AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All" Spacing="20" Padding="30, 10, 30, 10" >
+                <StackLayout HorizontalOptions="Center">
+                    <Image x:Name="home" WidthRequest="120"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Spacing="5">
+                    <Button Text="Abscence" x:Name="Abscence" Opacity="0.3" Padding="5" HorizontalOptions="StartAndExpand" FontFamily="bold"  WidthRequest="200" Clicked="Abscence_Clicked"/>
+                    <Image Aspect="AspectFit" x:Name="abscence" WidthRequest="80"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Spacing="5" >
+                    <Button Text="Add student" x:Name="AddStudent" Opacity="0.3" Padding="5" HorizontalOptions="StartAndExpand" FontFamily="bold"  WidthRequest="200" Clicked="AddStudent_Clicked"/>
+                    <Image Aspect="AspectFit" x:Name="addstudent" WidthRequest="80"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Spacing="5" >
+                    <Button Text="Add Course" x:Name="AddCourse" Opacity="0.3" Padding="5" HorizontalOptions="StartAndExpand" FontFamily="bold"  WidthRequest="200" Clicked="AddCourse_Clicked"/>
+                    <Image Aspect="AspectFit" x:Name="addcourse" WidthRequest="80"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Spacing="5" >
+                    <Button Text="Search" x:Name="Search" Opacity="0.3" Padding="5" HorizontalOptions="StartAndExpand" FontFamily="bold" WidthRequest="200" Clicked="Search_Clicked"/>
+                    <Image Aspect="AspectFit" x:Name="search" WidthRequest="80"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Spacing="5" >
+                    <Button Text="Logout" x:Name="LogOut" Opacity="0.3" Padding="5" HorizontalOptions="StartAndExpand" FontFamily="bold" WidthRequest="200" Clicked="LogOut_Clicked"/>
+                    <Image Aspect="AspectFit" x:Name="logout" WidthRequest="80"/>
+                </StackLayout>
+            </StackLayout>
+        </AbsoluteLayout> 
+    </ContentPage.Content>
+</ContentPage>

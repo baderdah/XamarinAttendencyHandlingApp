@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Abscence.SignUpPage">
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <ActivityIndicator IsRunning="{Binding Source={x:Reference backImage}, Path=IsLoading}" AbsoluteLayout.LayoutBounds="0.5, 0.5, 100, 100" AbsoluteLayout.LayoutFlags="PositionProportional" />
+            <Image x:Name="backImage" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All" Aspect="Fill"/>
+            <StackLayout AbsoluteLayout.LayoutBounds="0, 0.3, 1, 1" AbsoluteLayout.LayoutFlags="All" Spacing="30" Padding="30" HorizontalOptions="FillAndExpand">
+                <Image x:Name="professorLogo" HeightRequest="120"/>
+                <StackLayout Orientation="Horizontal">
+                    <Entry Placeholder="username" Keyboard="Text" x:Name="userName" HorizontalOptions="FillAndExpand" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Entry Placeholder="password" IsPassword="True" x:Name="password" HorizontalOptions="FillAndExpand" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Entry Placeholder="password confirmation" IsPassword="True" x:Name="passwordConfirmation" HorizontalOptions="FillAndExpand" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand"> 
+                    <Button Text="Submit" BackgroundColor="Blue" TextColor="White" Clicked="Submit_Clicked" WidthRequest="150"/>
+                    <Button Text="Reset" BackgroundColor="gray" TextColor="White" Clicked="Reset_Clicked" WidthRequest="150"/>
+                    
+                </StackLayout>
+
+            </StackLayout>
+            
+            
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

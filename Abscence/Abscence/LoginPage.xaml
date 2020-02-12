@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Abscence.LoginPage"
+              xmlns:local="clr-namespace:Abscence"
+             NavigationPage.HasNavigationBar="false">
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <Image x:Name="backGrd" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All" Aspect="Fill"
+                   Source="{local:EmbededImage ResourceId=XamarinProject.Images.login.png}"/>
+            <ActivityIndicator Color="Blue" IsRunning="{Binding Source={x:Reference backGrd}, Path=IsLoading}" AbsoluteLayout.LayoutBounds="0.5, 0.5, 100, 100" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+            <StackLayout AbsoluteLayout.LayoutBounds="0.5, 0.1, 1, 0.3 " AbsoluteLayout.LayoutFlags="All" >
+                <StackLayout HorizontalOptions="Center" >
+                    <Image x:Name="logo" Aspect="AspectFit"/>
+                    <Label Text="AbScEnCe" TextColor="Cornsilk" FontSize="Header" FontFamily="cursive" />
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout AbsoluteLayout.LayoutBounds="0, 1, 1, 0.4 " AbsoluteLayout.LayoutFlags="All" >
+                <StackLayout Orientation="Horizontal" Padding="15"  >
+                    <Entry Placeholder="Login" HorizontalOptions="FillAndExpand" x:Name="login" PlaceholderColor="Blue"></Entry>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Padding="15" >
+                    <Entry Placeholder="Password" IsPassword="True" HorizontalOptions="FillAndExpand" x:Name="password" PlaceholderColor="Blue" ></Entry>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Padding="20" Spacing="30" HorizontalOptions="CenterAndExpand">
+                    <Button Text="Login" BackgroundColor="#1249DC" FontFamily="bold" TextColor="White" Clicked="Login_Clicked" WidthRequest="150" ></Button>
+                    <Button Text="Sign-up" BackgroundColor="#E99B09" FontFamily="bold" TextColor="White" Clicked="Sign_Clicked" WidthRequest="150"></Button>
+                </StackLayout>
+            </StackLayout>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

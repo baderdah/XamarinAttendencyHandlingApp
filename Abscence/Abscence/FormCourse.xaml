@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Abscence.FormCourse">
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <ActivityIndicator IsRunning="{Binding Source={x:Reference backImage}, Path=IsLoading}" AbsoluteLayout.LayoutBounds="0.5, 0.5, 100, 100" AbsoluteLayout.LayoutFlags="PositionProportional" />
+            <Image x:Name="backImage" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All" Aspect="Fill"/>
+            <StackLayout AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All" Spacing="30" Padding="30" HorizontalOptions="CenterAndExpand">
+                <Image x:Name="courseLogo" HeightRequest="120"/>
+                <Label Text="Add a New Lesson" FontSize="Title" TextColor="White" HorizontalOptions="Center"/>
+                <Picker Title="Choose an option" x:Name="fil" SelectedIndex="1" FontSize="Title" TextColor="LightPink">
+                    <Picker.Items>
+                        <x:String>Informatique</x:String>
+                        <x:String>Industriel</x:String>
+                        <x:String>GTR</x:String>
+                        <x:String>Procedes</x:String>
+                    </Picker.Items>
+                </Picker>
+                
+                <Entry Placeholder="lesson name" Keyboard="Text" x:Name="courseName" FontSize="Title" />
+                               
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Button Text="Submit" Clicked="addCourse_Clicked" BackgroundColor="#3333EB" TextColor="White" WidthRequest="150" ></Button>
+                    <Button Text="Reset" BackgroundColor="#C8C81C" TextColor="White" WidthRequest="150"></Button>
+                </StackLayout>
+            </StackLayout>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

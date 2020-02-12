@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>Abscence</id>
+    <version>1.0.0</version>
+    <authors>Abscence</authors>
+    <owners>Abscence</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Package Description</description>
+    <dependencies>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="Xamarin.Essentials" version="1.3.1" exclude="Build,Analyzers" />
+        <dependency id="Xamarin.Forms" version="4.3.0.908675" exclude="Build,Analyzers" />
+        <dependency id="sqlite-net-pcl" version="1.6.292" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="C:\Users\lenovo\source\repos\Abscence\Abscence\Abscence\bin\Debug\netstandard2.0\Abscence.dll" target="lib\netstandard2.0\Abscence.dll" />
+  </files>
+</package>

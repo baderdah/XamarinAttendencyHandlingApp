@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Abscence.StudentAttendance">
+
+    <AbsoluteLayout>
+        <Image x:Name="bgImage"  AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" Aspect="Fill"/>
+        <ActivityIndicator IsRunning="{Binding Source={x:Reference bgImage}, Path=IsLoading}" AbsoluteLayout.LayoutBounds="0.5, 0.5, 100, 100" AbsoluteLayout.LayoutFlags="PositionProportional" Color="Blue"/>
+        <StackLayout Spacing="20" Padding="20" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
+            <Image HorizontalOptions="Center" x:Name="logoStudent" Aspect="AspectFit" HeightRequest="120" />
+            <Label Text="Student's infos" FontSize="Large" HorizontalOptions="Center" TextColor="White"/>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="CNE" FontSize="Large" HorizontalOptions="FillAndExpand"/>
+                <Label Text="" x:Name="cne" FontSize="Medium"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="First Name" FontSize="Large" HorizontalOptions="FillAndExpand" />
+                <Label Text=""  x:Name="firstName" FontSize="Medium"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Last Name" FontSize="Large" HorizontalOptions="FillAndExpand" />
+                <Label Text="" x:Name="lastName" FontSize="Medium"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Option" FontSize="Large" HorizontalOptions="FillAndExpand" />
+                <Label Text="" x:Name="option" FontSize="Medium"/>
+            </StackLayout>
+            <StackLayout HorizontalOptions="Center" Spacing="20">
+                <Label Text="Nombre d'abscences"  HorizontalOptions="Center" FontSize="Large" TextColor="Red"></Label>
+                <Label Text=""  x:Name="nbAbscences" HorizontalOptions="Center" FontSize="Large" TextColor="Red"></Label>
+                <Button Text="View More details" Clicked="Details_Clicked" BackgroundColor="#2525CD" TextColor="White"></Button>
+            </StackLayout>
+        </StackLayout>
+    </AbsoluteLayout>
+
+</ContentPage>

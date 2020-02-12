@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Abscence.ListAbscence"
+             NavigationPage.HasNavigationBar="false">
+    <AbsoluteLayout>
+        <ActivityIndicator IsRunning="true" x:Name="waiting" AbsoluteLayout.LayoutBounds="0.5, 0.5, 100, 100" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+        <Image Aspect="Fill" x:Name="bgImage"/> 
+        <StackLayout AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All" Padding="20" Spacing="10">
+            <StackLayout>
+                <DatePicker  Format="d MMM yyyy" HorizontalOptions="Center" x:Name="day" FontSize="Title"></DatePicker>
+                <StackLayout Orientation="Horizontal">
+                    <StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal">
+                        <Label Text="Starts: " FontSize="Medium" FontFamily="bold" TextColor="white"></Label>
+                        <TimePicker  x:Name="start" FontSize="Subtitle"></TimePicker>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Ends: " FontSize="Medium" FontFamily="bold" TextColor="White"></Label>
+                        <TimePicker x:Name="end" FontSize="Subtitle"></TimePicker>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <StackLayout HorizontalOptions="StartAndExpand">
+                    <Label Text="Lesson: " FontSize="Medium" FontFamily="bold" TextColor="white"></Label>
+                    <Picker Title="Choose a lesson" x:Name="crs" FontSize="Subtitle" >
+                        <Picker.Items/>
+                    </Picker>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Filière: " FontSize="Medium" FontFamily="bold" TextColor="white"></Label>
+                    <Picker Title="Choose an option" x:Name="fil" SelectedIndexChanged="Filiere_SelectedIndexChanged" FontSize="Subtitle" >
+                        <Picker.Items>
+                            <x:String>Informatique</x:String>
+                            <x:String>Industriel</x:String>
+                            <x:String>GTR</x:String>
+                            <x:String>Procedes</x:String>
+                        </Picker.Items>
+                    </Picker>
+                </StackLayout>
+            </StackLayout>
+            <Label Text="Students list" FontSize="Large" TextColor="White" HorizontalOptions="Center"></Label>
+            <ListView x:Name="Studentslist"  ItemSelected="Student_ItemSelected" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Padding="3, 15">
+                                <Label Text="{Binding FirstName}" FontSize="Medium"/>
+                                <Label Text="{Binding LastName}" FontSize="Medium"/>
+                            </StackLayout>
+                            <ViewCell.ContextActions>
+                                <MenuItem Text="Delete" IsDestructive="True" CommandParameter="{Binding .}" Clicked="DeleteStd_Clicked"/>
+                            </ViewCell.ContextActions>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Button Text="Back to profil" Clicked ="BacktoMenu_Clicked" BackgroundColor="#FFFF85" ></Button>
+            </StackLayout>
+        </StackLayout>
+    </AbsoluteLayout>
+
+</ContentPage>

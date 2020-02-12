@@ -1,0 +1,80 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\back.jpg" />
+    <None Remove="Images\filter.jpg" />
+    <None Remove="Images\gray.jpg" />
+    <None Remove="Images\Icons\abscence.png" />
+    <None Remove="Images\Icons\course.png" />
+    <None Remove="Images\Icons\database.png" />
+    <None Remove="Images\Icons\home.png" />
+    <None Remove="Images\Icons\logout.png" />
+    <None Remove="Images\Icons\professor.png" />
+    <None Remove="Images\Icons\search.png" />
+    <None Remove="Images\Icons\student.png" />
+    <None Remove="Images\logo.png" />
+    <None Remove="Images\yellow.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Images\back.jpg" />
+    <EmbeddedResource Include="Images\filter.jpg" />
+    <EmbeddedResource Include="Images\gray.jpg" />
+    <EmbeddedResource Include="Images\Icons\abscence.png" />
+    <EmbeddedResource Include="Images\Icons\course.png" />
+    <EmbeddedResource Include="Images\Icons\database.png" />
+    <EmbeddedResource Include="Images\Icons\home.png" />
+    <EmbeddedResource Include="Images\Icons\logout.png" />
+    <EmbeddedResource Include="Images\Icons\professor.png" />
+    <EmbeddedResource Include="Images\Icons\search.png" />
+    <EmbeddedResource Include="Images\Icons\student.png" />
+    <EmbeddedResource Include="Images\logo.png" />
+    <EmbeddedResource Include="Images\yellow.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="sqlite-net-pcl" Version="1.6.292" />
+    <PackageReference Include="Xamarin.Forms" Version="4.3.0.908675" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="AttendanceDetail.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="FormCourse.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="FormStudent.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="ListAbscence.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="LoginPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="ProfilPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="SearchPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="SignUpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="StudentAttendance.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

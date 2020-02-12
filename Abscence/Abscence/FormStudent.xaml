@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Abscence.FormStudent">
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <Image x:Name="backImage" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All" Aspect="Fill"/>
+            <ActivityIndicator Color="Blue" IsRunning="{Binding Source={x:Reference backImage}, Path=IsLoading}" AbsoluteLayout.LayoutBounds="0.5, 0.5, 100, 100" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+            <StackLayout AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All" Spacing="15" Padding="30" HorizontalOptions="FillAndExpand">
+                <Image x:Name="logoStudent" HeightRequest="100" />
+                <StackLayout Orientation="Horizontal">
+                    <Entry Placeholder="Cne" Keyboard="Numeric" x:Name="cne" HorizontalOptions="FillAndExpand" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Entry Placeholder="First name" x:Name="firstName" HorizontalOptions="FillAndExpand" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Entry Placeholder="Last name" x:Name="lastName" HorizontalOptions="FillAndExpand" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Entry Placeholder="Email" x:Name="mail" Keyboard="Email" HorizontalOptions="FillAndExpand" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Entry Placeholder="Phone number" Keyboard="Numeric" x:Name="phoneNumber" HorizontalOptions="FillAndExpand" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Picker HorizontalOptions="FillAndExpand" Title="Choose an option" SelectedIndex="1" x:Name="filiere" FontSize="Large">
+                        <Picker.Items>
+                            <x:String>Informatique</x:String>
+                            <x:String>Industriel</x:String>
+                            <x:String>GTR</x:String>
+                            <x:String>Procedes</x:String>
+                        </Picker.Items>
+                    </Picker>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                    <Button Text="Submit" BackgroundColor="Blue" TextColor="White" Clicked="Submit_Clicked" WidthRequest="150" />
+                    <Button Text="Reset" BackgroundColor="#C8C827" TextColor="White"  WidthRequest="150" />
+                </StackLayout>
+
+            </StackLayout>
+
+
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

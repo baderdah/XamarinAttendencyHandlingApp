@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Abscence.AttendanceDetail">
+
+    <AbsoluteLayout>
+        <Image x:Name="bgImage"  AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" Aspect="Fill"/>
+        <ActivityIndicator IsRunning="{Binding Source={x:Reference bgImage}, Path=IsLoading}" AbsoluteLayout.LayoutBounds="0.5, 0.5, 100, 100" AbsoluteLayout.LayoutFlags="PositionProportional" Color="Blue"/>
+        <StackLayout Padding="30" Spacing="30" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" >
+            <Label Text="Attendance details" TextColor="Black" FontSize="Title" HorizontalTextAlignment="Center"/>
+            <Label Text="" x:Name="fullName" FontSize="Subtitle" HorizontalTextAlignment="Center"/>
+            <ListView HasUnevenRows="True" x:Name="listView">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Label x:Name="date" Text="{Binding Day}" HorizontalOptions="Center" TextColor="Blue"/>
+                                <StackLayout Orientation="Horizontal">
+                                    <StackLayout Padding="10">
+                                        <Label Text="From: " />
+                                        <Label Text="To: " />
+                                    </StackLayout>
+                                    <StackLayout HorizontalOptions="StartAndExpand" Padding="10">
+                                        <Label Text="{Binding Start}" x:Name="start" />
+                                        <Label Text="{Binding End}" x:Name="end" />
+                                    </StackLayout>
+                                    <StackLayout Padding="20">
+                                        <Label Text="{Binding Course}" VerticalOptions="Center" TextColor="Blue"></Label>
+                                    </StackLayout>
+                                </StackLayout>
+                            </StackLayout>
+                            <ViewCell.ContextActions>
+                                <MenuItem Text="Delete" IsDestructive="True" CommandParameter="{Binding .}" Clicked="DeleteAbscence_Clicked"/>
+                            </ViewCell.ContextActions>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </StackLayout>
+    </AbsoluteLayout>
+</ContentPage>
